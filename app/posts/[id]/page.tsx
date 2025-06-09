@@ -1,7 +1,6 @@
 import { Header } from "@/components/header";
 import { PostDetail } from "@/components/post-detail";
 import { fetchPostFromApi } from "@/lib/api-service";
-import { getCurrentProjectDomain } from "@/lib/domain-mapper";
 import { notFound } from "next/navigation";
 
 interface PostPageProps {
@@ -20,7 +19,7 @@ export default async function PostPage({ params }: PostPageProps) {
 
   try {
     // 현재 프로젝트의 도메인 자동 감지
-    const communityUrl = "https://easy-pressrelease.com"; // 하드코딩된 도메인 (pbn-domains.json 기반)
+    const communityUrl = "https://okentradas.com"; // 하드코딩된 도메인 (pbn-domains.json 기반)
 
     // API에서 게시물 데이터 가져오기
     const post = await fetchPostFromApi(communityUrl, postId);
